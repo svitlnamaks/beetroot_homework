@@ -5,18 +5,19 @@
 # Make another method called talk() which makes prints a greeting from the person containing,
 # for example like this: “Hello, my name is Carl Johnson and I’m 26 years old”.
 
-class Person:
-    def __init__(self, firstname, lastname, age):
+class Person :
+    def __init__(self, firstname, lastname, age) :
         self.firstname = firstname
         self.lastname = lastname
         self.age = age
 
-    def talk(self):
-        print(f'Hello, my name is {self.firstname} {self.lastname} and I\'m {self.age} years old')
+    def talk(self) :
+        print(f'Hello, ;my name is {self.firstname} {self.lastname} and I\'m {self.age} years old')
 
 
-person = Person('Mary', 'White', 28)
-print(person.firstname)
-print(person.lastname)
-print(person.age)
-person.talk()
+if __name__ == '__main__' :
+    person = Person('Mary', 'White', 28)
+    print(person.firstname)
+    print(person.lastname)
+    print(person.age)
+    person.talk()
