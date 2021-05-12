@@ -1,4 +1,7 @@
+#Потрібно доробити завдяння
+
 # Task 3
+
 # TV controller
 # Create a simple prototype of a TV controller in Python.It’ll use
 # the following commands:
@@ -34,7 +37,7 @@
 class TVController() :
     def __init__(self, channels) :
         self.channels = channels
-        self._current_channel = 0
+        self.current_channel = 0
 
     def first_channel(self) :
         first = print(self.channels[0])
@@ -54,32 +57,32 @@ class TVController() :
 
     # return next(my_next_channel
     def next_channel(self) :
-        pass
+        self.channels += 1
+        if self.channels + 1 == len :
+            self.channels = 0
+        return self.channels
 
     def previous_channel(self) :
+        self.channels -= 1
         pass
 
     def is_exist(self, N) :
-        if N in self.channels :
+        if N in self.channels or N <= len(self.channels) :
             return print('Yes')
         else :
             return print('No')
 
     def current_channel(self) :
-        running=True
-        while running:
-            for channel in self.channels:
-                next_channel=channels[channels(channel)-len(channels)+1]
-                return next_channel
+        return self.channels[self.current_channel]
 
 
 CHANNELS = ["BBC", "Discovery", "TV1000"]
 controller = TVController(CHANNELS)
 controller.first_channel()  # == "BBC"
 controller.last_channel()  # == "TV1000"
-controller.turn_channel(1)  # == "BBC"
-#controller.next_channel()  # == "Discovery"
+controller.turn_channel(2)  # == "BBC"
+# controller.next_channel()  # == "Discovery"
 # controller.previous_channel()  # "BBC"
-controller.current_channel()  # == "BBC"
+# controller.current_channel()  # == "BBC"
 controller.is_exist(4)  # == "No"
 controller.is_exist("BBC")  # == "Yes"
